@@ -18,6 +18,10 @@ function sqg_activar() {
     flush_rewrite_rules();
 }
 
-
+// -- Cuando el ADMIN desactiva el plugin
+register_deactivation_hook( __FILE__, 'sqg_desactivar' );
+function sqg_desactivar() {
+    flush_rewrite_rules();
+}
 
 ?>
