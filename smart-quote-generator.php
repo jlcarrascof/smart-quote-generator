@@ -12,4 +12,12 @@
 
 if ( ! defined( 'ABSPATH')) exit;
 
+// -- Cuando el ADMIN activa el plugin
+register_activation_hook( __FILE__, 'sqg_activar');
+function sqg_activar() {
+    flush_rewrite_rules();
+}
+
+
+
 ?>
