@@ -24,4 +24,10 @@ function sqg_desactivar() {
     flush_rewrite_rules();
 }
 
+// -- El núcleo del plugin: Engancharse al momento 'init' --
+add_action( 'init', 'sqg_registrar_cpt' );
+function sqg_registrar_cpt() {
+    error_log( 'sqg_registrar_cpt ejecutado!' );
+}
+
 ?>
