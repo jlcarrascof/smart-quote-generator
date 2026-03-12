@@ -27,7 +27,13 @@ function sqg_desactivar() {
 // -- El núcleo del plugin: Engancharse al momento 'init' --
 add_action( 'init', 'sqg_registrar_cpt' );
 function sqg_registrar_cpt() {
-    error_log( 'sqg_registrar_cpt ejecutado!' );
-}
-
+    $args = array(
+        'public'    => true,
+        'label'     => 'Cotizaciones',
+        'menu_icon' => 'dashicons-money-alt',
+        'supports'  => array('title', 'editor', 'custom-fields'),
+        'rewrite'   => array('slug' => 'cotizacion'),
+    );
+    register_post_type( 'sqg_cotizacion', $args );
+}    
 ?>
