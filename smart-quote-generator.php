@@ -28,11 +28,14 @@ function sqg_desactivar() {
 add_action( 'init', 'sqg_registrar_cpt' );
 function sqg_registrar_cpt() {
     $args = array(
-        'public'    => true,
-        'label'     => 'Cotizaciones',
-        'menu_icon' => 'dashicons-money-alt',
-        'supports'  => array('title', 'editor', 'custom-fields'),
-        'rewrite'   => array('slug' => 'cotizacion'),
+        'public'        => true,
+        'label'         => 'Cotizaciones',
+        'menu_icon'     => 'dashicons-money-alt',
+        'supports'      => array('title', 'editor', 'custom-fields'),
+        'rewrite'       => array('slug' => 'cotizacion'),
+        'show_in_rest'  => true, 
+        'has_archive'   => true,
+        'description'   => 'Cotizaciones generadas por el Smart Quote Generator',
     );
     register_post_type( 'sqg_cotizacion', $args );
 }    
